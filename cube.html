@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cube 3D</title>
+    <style>
+        .main {
+            perspective: 800px;
+            perspective-origin: 50% 100px;
+            margin: 200px;
+        }
+
+        .cube {
+            position: relative;
+            width: 200px;
+            transform-style: preserve-3d;
+
+        }
+
+        .cube div {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+
+        }
+
+        .back {
+            transform: translateZ(-100px) rotateY(180deg);
+            border: 2px solid black;
+            border-radius: 5px;
+            background: linear-gradient(320deg, #ce3014, #f0df48);
+        }
+
+        .right {
+            transform: rotateY(-270deg) translateX(100px);
+            transform-origin: top right;
+            border-radius: 5px;
+            background: linear-gradient(320deg, #11b97b, #0e6b49);
+            border: 2px solid black;
+        }
+
+        .left {
+            transform: rotateY(270deg) translateX(-100px);
+            transform-origin: center left;
+            border: 2px solid black;
+            border-radius: 5px;
+            background: linear-gradient(320deg, #15356e, #08794d);
+        }
+
+        .top {
+            transform: rotateX(-90deg) translateY(-100px);
+            transform-origin: top center;
+            background: linear-gradient(320deg, #0a461c, #189e76);
+            border: 2px solid black;
+            border-radius: 5px;
+            
+        }
+
+        .bottom {
+            transform: rotateX(90deg) translateY(100px);
+            transform-origin: bottom center;
+            border-radius: 5px;
+            background: linear-gradient(320deg, #b82cca, #dd0c52);
+            border: 2px solid black;
+        }
+
+        .front {
+            transform: translateZ(100px);
+            border: 2px solid black;
+            border-radius: 5px;
+            background: linear-gradient(320deg, #44ca2c, #cc7eb2);
+        }
+
+        @keyframes spin-vertical {
+            from {
+                transform: rotateY(360deg);
+            }
+
+            to {
+                transform: rotateY(0deg);
+            }
+        }
+
+        .cube {
+            animation: spin-vertical 4s infinite linear;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="cube">
+            <div class="front"></div>
+            <div class="back"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+    </div>
+</body>
+
+</html>
